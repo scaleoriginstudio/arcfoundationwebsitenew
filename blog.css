@@ -1,0 +1,54 @@
+/* blog.css */
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:none} }
+
+.blog-hero { padding: calc(var(--nav-h) + 5rem) var(--gutter) 4rem; background: var(--white); border-bottom: 1px solid var(--grey-200); }
+.blog-hero-inner { max-width: var(--max); margin: 0 auto; }
+
+.blog-filters { background: var(--white); border-bottom: 1px solid var(--grey-200); position: sticky; top: var(--nav-h); z-index: 50; }
+.blog-filters-inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); display: flex; overflow-x: auto; scrollbar-width: none; gap: 0.25rem; }
+.blog-filters-inner::-webkit-scrollbar { display: none; }
+.filter-btn { padding: 1rem 1.2rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey-600); background: none; border: none; border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; cursor: pointer; font-family: 'Outfit', sans-serif; transition: all 0.2s; }
+.filter-btn.active, .filter-btn:hover { color: var(--red); border-bottom-color: var(--red); }
+
+.blog-featured-section { padding: 4rem var(--gutter) 3rem; background: var(--grey-50); }
+.blog-featured-inner { max-width: var(--max); margin: 0 auto; }
+.blog-featured { display: grid; grid-template-columns: 3fr 2fr; overflow: hidden; }
+.bf-image { overflow: hidden; min-height: 360px; }
+.bf-image .img-ph { height: 100%; }
+.bf-body { padding: 3rem; display: flex; flex-direction: column; justify-content: center; gap: 1rem; }
+.bf-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.4rem,2.5vw,2rem); font-weight: 500; color: var(--ink); line-height: 1.3; }
+.bf-excerpt { font-size: 0.92rem; line-height: 1.85; color: var(--grey-600); font-weight: 300; }
+
+.blog-grid-section { padding: 5rem var(--gutter); background: var(--white); }
+.blog-grid-inner { max-width: var(--max); margin: 0 auto; }
+.blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
+.blog-card { display: flex; flex-direction: column; }
+.bc-img-link { display: block; }
+.bc-img { height: 200px; overflow: hidden; }
+.bc-img .img-ph { height: 100%; transition: transform 0.4s var(--ease); }
+.blog-card:hover .bc-img .img-ph { transform: scale(1.04); }
+.bc-body { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; gap: 0.6rem; }
+.bc-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 500; line-height: 1.3; }
+.bc-title a { color: var(--ink); transition: color 0.2s; }
+.bc-title a:hover { color: var(--red); }
+.bc-excerpt { font-size: 0.83rem; line-height: 1.75; color: var(--grey-600); font-weight: 300; flex-grow: 1; }
+.bc-read { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--red); margin-top: 0.5rem; }
+.blog-card.hidden { display: none; }
+
+.nl-section { background: var(--grey-100); border-top: 1px solid var(--grey-200); padding: 6rem var(--gutter); }
+.nl-inner { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.nl-form { display: flex; gap: 0; }
+.nl-input { flex-grow: 1; padding: 0.88rem 1.1rem; border: 1.5px solid var(--grey-200); border-right: none; border-radius: var(--radius) 0 0 var(--radius); font-family: 'Outfit', sans-serif; font-size: 0.9rem; color: var(--ink); outline: none; background: var(--white); transition: border-color 0.2s; }
+.nl-input:focus { border-color: var(--red); }
+.nl-form .btn { border-radius: 0 var(--radius) var(--radius) 0; }
+
+@media (max-width: 900px) {
+  .blog-featured { grid-template-columns: 1fr; }
+  .bf-image { min-height: 240px; }
+  .blog-grid { grid-template-columns: 1fr 1fr; }
+  .nl-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .nl-form { flex-direction: column; }
+  .nl-input { border-right: 1.5px solid var(--grey-200); border-bottom: none; border-radius: var(--radius) var(--radius) 0 0; }
+  .nl-form .btn { border-radius: 0 0 var(--radius) var(--radius); }
+}
+@media (max-width: 580px) { .blog-grid { grid-template-columns: 1fr; } }

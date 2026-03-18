@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Us — ARC Foundation</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="join.css">
+</head>
+<body>
+<nav id="site-nav"><div class="nav-inner"><a href="index.html" class="nav-logo"><div class="nav-logo-placeholder">Your Logo Here</div></a><ul class="nav-links" id="nav-links"><li><a href="about.html">About</a></li><li><a href="programs.html">Programs</a></li><li><a href="impact.html">Impact</a></li><li><a href="blog.html">Blog</a></li><li><a href="media.html">Media</a></li><li><a href="join.html">Join Us</a></li></ul><div class="nav-actions"><button class="btn-donate" data-donate>&#9829; Donate</button><a href="contact.html" class="nav-get-involved">Get Involved</a></div><button class="nav-hamburger" id="nav-hamburger"><span></span><span></span><span></span></button></div></nav>
+
+<section class="page-hero-section" style="background:var(--grey-50)">
+  <div class="page-hero-inner">
+    <span class="eyebrow" style="opacity:0;animation:fadeUp 0.6s 0.1s var(--ease) forwards">Join the Movement</span>
+    <h1 class="page-title" style="opacity:0;animation:fadeUp 0.8s 0.25s var(--ease) forwards">Build something<br>that <em>matters.</em></h1>
+    <p style="opacity:0;animation:fadeUp 0.8s 0.4s var(--ease) forwards">Whether you have two hours or two years, there&#39;s a place for you in ARC Foundation.</p>
+  </div>
+</section>
+
+<section class="join-paths-section">
+  <div class="join-paths-inner">
+    <div class="join-path card reveal">
+      <div class="jp-num">01</div>
+      <span class="eyebrow">Volunteer</span>
+      <h2>Give your time,<br><em>change a community.</em></h2>
+      <p>Volunteers are the backbone of ARC Foundation. From planting trees to running debate workshops, every hour creates real, lasting impact.</p>
+      <ul class="jp-perks">
+        <li>Participate in events, drives, and field programs</li>
+        <li>Work alongside a passionate youth team</li>
+        <li>Certificate of recognition for all active volunteers</li>
+        <li>Flexible commitment — one event or ongoing</li>
+      </ul>
+      <a href="#apply" class="btn btn-red">Apply to Volunteer</a>
+    </div>
+    <div class="join-path card reveal d2">
+      <div class="jp-num">02</div>
+      <span class="eyebrow">Internship</span>
+      <h2>Do real work.<br><em>Build real skills.</em></h2>
+      <p>Our internships are for people who want to learn by doing. No coffee runs — just meaningful work across programs, communications, and field operations.</p>
+      <ul class="jp-perks">
+        <li>Program coordination and project management</li>
+        <li>Content writing, social media, and communications</li>
+        <li>Research, impact documentation, and reporting</li>
+        <li>Stipend-based or academic credit available</li>
+      </ul>
+      <a href="#apply" class="btn btn-outline">Apply for Internship</a>
+    </div>
+  </div>
+</section>
+
+<section class="openings-section">
+  <div class="openings-inner">
+    <span class="eyebrow reveal">Open Positions</span>
+    <h2 class="section-title reveal d1" style="margin-bottom:3rem">Current <em>openings</em></h2>
+    <div class="openings-list reveal d2">
+      <div class="opening-row"><span class="or-dept">Programs</span><span class="or-title">Debate Program Coordinator</span><span class="tag tag-grey">Internship</span><span class="or-arrow">&rarr;</span></div>
+      <div class="opening-row"><span class="or-dept">Environment</span><span class="or-title">Field Volunteer — Plantation Drives</span><span class="tag tag-grey">Volunteer</span><span class="or-arrow">&rarr;</span></div>
+      <div class="opening-row"><span class="or-dept">Communications</span><span class="or-title">Social Media &amp; Content Intern</span><span class="tag tag-grey">Internship</span><span class="or-arrow">&rarr;</span></div>
+      <div class="opening-row"><span class="or-dept">Research</span><span class="or-title">Impact Documentation Intern</span><span class="tag tag-grey">Internship</span><span class="or-arrow">&rarr;</span></div>
+      <div class="opening-row"><span class="or-dept">Community</span><span class="or-title">Village Outreach Volunteer</span><span class="tag tag-grey">Volunteer</span><span class="or-arrow">&rarr;</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="apply-section" id="apply">
+  <div class="apply-inner">
+    <div class="apply-info reveal">
+      <span class="eyebrow">Apply Now</span>
+      <h2 class="section-title">Join <em>ARC Foundation</em></h2>
+      <p>Fill in the form and we&#39;ll be in touch within 3–5 working days. Tell us honestly why you want to be part of this.</p>
+    </div>
+    <form class="apply-form reveal d2" id="join-form">
+      <div class="form-row"><div class="form-field"><label>First Name</label><input type="text" name="first_name" placeholder="Rohan" required></div><div class="form-field"><label>Last Name</label><input type="text" name="last_name" placeholder="Mehta" required></div></div>
+      <div class="form-row"><div class="form-field"><label>Email</label><input type="email" name="email" placeholder="you@example.com" required></div><div class="form-field"><label>Phone</label><input type="tel" name="phone" placeholder="+91 98765 43210"></div></div>
+      <div class="form-field"><label>Applying For</label><select name="role" required><option value="">Select a role&hellip;</option><option>Debate Program Coordinator (Internship)</option><option>Field Volunteer — Plantation Drives</option><option>Social Media &amp; Content Intern</option><option>Impact Documentation Intern</option><option>Village Outreach Volunteer</option><option>General Volunteer</option></select></div>
+      <div class="form-field"><label>Why do you want to join ARC Foundation?</label><textarea name="message" placeholder="Tell us in your own words&hellip;" required></textarea></div>
+      <p class="form-note">We respond to all applications within 3–5 working days.</p>
+      <button type="submit" class="btn btn-red" style="width:100%;padding:1rem;">Submit Application</button>
+    </form>
+    <div class="form-success" id="join-success"><h3>Application received.</h3><p>Thank you. We&#39;ll review it and be in touch within 3–5 working days.</p></div>
+  </div>
+</section>
+
+<footer id="site-footer"><div class="footer-top"><div class="footer-brand"><div class="footer-brand-placeholder">Your Logo Here</div><p class="footer-tagline">Working at the intersection of youth, environment, and community.</p><div class="footer-social"><a href="https://www.linkedin.com/company/aresponsiblecitizenfoundation" target="_blank" rel="noopener">in</a><a href="https://www.facebook.com/aresponsiblecitizenfoundation" target="_blank" rel="noopener">f</a><a href="#">ig</a></div></div><div class="footer-col"><h5>Programs</h5><ul><li><a href="programs.html">Debate &amp; Speaking</a></li><li><a href="programs.html">Environment</a></li><li><a href="programs.html">Social Upliftment</a></li></ul></div><div class="footer-col"><h5>Organisation</h5><ul><li><a href="about.html">About ARC</a></li><li><a href="impact.html">Impact</a></li><li><a href="blog.html">Blog</a></li></ul></div><div class="footer-col"><h5>Get Involved</h5><ul><li><a href="join.html">Volunteer</a></li><li><a href="contact.html">Contact</a></li><li><button data-donate style="background:none;border:none;font-family:inherit;font-size:0.85rem;color:var(--red);cursor:pointer;padding:0;">&#9829; Donate</button></li></ul></div></div><div class="footer-bottom"><span class="footer-copy">&copy; 2024 A Responsible Citizen Foundation.</span><div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div></div></footer>
+<div class="donate-overlay" id="donate-overlay"><div class="donate-modal"><button class="modal-close" id="modal-close">&times;</button><span class="eyebrow">Support ARC Foundation</span><h2>Make a Difference</h2><p>Your donation funds debate programs, tree plantations, and livelihood initiatives across India.</p><div class="donate-presets"><button class="donate-preset" data-amount="500">&#8377;500</button><button class="donate-preset active" data-amount="1000">&#8377;1,000</button><button class="donate-preset" data-amount="2500">&#8377;2,500</button><button class="donate-preset" data-amount="5000">&#8377;5,000</button><button class="donate-preset" data-amount="10000">&#8377;10,000</button><button class="donate-preset" data-amount="">Custom</button></div><div class="donate-field"><label>Amount (INR)</label><input type="number" id="donate-amount" value="1000" min="1"></div><button class="btn btn-red donate-pay-btn" id="donate-pay-btn">Proceed to Pay</button><p class="donate-note">Razorpay secure checkout &middot; 80G tax exemption applicable</p></div></div>
+<script src="shared.js"></script>
+<script src="join.js"></script>
+</body>
+</html>
