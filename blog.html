@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog — ARC Foundation</title>
+<link rel="icon" type="image/png" href="img/logo.png">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="blog.css">
 </head>
@@ -10,7 +11,7 @@
 
 <nav id="site-nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><div class="nav-logo-placeholder">Your Logo Here</div></a>
+    <a href="index.html" class="nav-logo"><img src="img/logo.png" alt="ARC Foundation" class="nav-logo-img" /></a>
     <ul class="nav-links" id="nav-links">
       <li><a href="about.html">About</a></li>
       <li><a href="programs.html">Programs</a></li>
@@ -18,6 +19,10 @@
       <li><a href="blog.html">Blog</a></li>
       <li><a href="media.html">Media</a></li>
       <li><a href="join.html">Join Us</a></li>
+      <li class="mobile-actions">
+        <button class="btn-donate" data-donate>&#9829; Donate</button>
+        <a href="contact.html" class="nav-get-involved btn btn-outline">Get Involved</a>
+      </li>
     </ul>
     <div class="nav-actions">
       <button class="btn-donate" data-donate>&#9829; Donate</button>
@@ -163,12 +168,37 @@
 
 <footer id="site-footer">
   <div class="footer-top">
-    <div class="footer-brand"><div class="footer-brand-placeholder">Your Logo Here</div><p class="footer-tagline">Working at the intersection of youth, environment, and community to build a more responsible India.</p><div class="footer-social"><a href="https://www.linkedin.com/company/aresponsiblecitizenfoundation" target="_blank" rel="noopener">in</a><a href="https://www.facebook.com/aresponsiblecitizenfoundation" target="_blank" rel="noopener">f</a><a href="#">ig</a></div></div>
-    <div class="footer-col"><h5>Programs</h5><ul><li><a href="programs.html">Debate &amp; Speaking</a></li><li><a href="programs.html">Environment</a></li><li><a href="programs.html">Social Upliftment</a></li></ul></div>
-    <div class="footer-col"><h5>Organisation</h5><ul><li><a href="about.html">About ARC</a></li><li><a href="impact.html">Impact</a></li><li><a href="blog.html">Blog</a></li><li><a href="media.html">Media</a></li></ul></div>
-    <div class="footer-col"><h5>Get Involved</h5><ul><li><a href="join.html">Volunteer</a></li><li><a href="contact.html">Contact</a></li><li><button data-donate style="background:none;border:none;font-family:inherit;font-size:0.85rem;color:var(--red);cursor:pointer;padding:0;text-align:left;">&#9829; Donate</button></li></ul></div>
+    <div class="footer-brand">
+      <img src="img/logo.png" alt="ARC Foundation" class="footer-logo">
+      <p class="footer-tagline">Working at the intersection of youth, environment, and community to build a more responsible India.</p>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/aresponsiblecitizenfoundation" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        <a href="https://www.facebook.com/aresponsiblecitizenfoundation" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">ig</a>
+      </div>
+    </div>
+    <div class="footer-col"><h5>Programs</h5><ul>
+      <li><a href="programs.html">Debate &amp; Speaking</a></li>
+      <li><a href="programs.html">Environment</a></li>
+      <li><a href="programs.html">Social Upliftment</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Organisation</h5><ul>
+      <li><a href="about.html">About ARC</a></li>
+      <li><a href="impact.html">Our Impact</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="media.html">Media</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Get Involved</h5><ul>
+      <li><a href="join.html">Volunteer</a></li>
+      <li><a href="join.html">Internships</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><button data-donate style="background:none;border:none;font-family:inherit;font-size:0.85rem;color:var(--red);cursor:pointer;padding:0;font-weight:400;text-align:left;">&#9829; Donate</button></li>
+    </ul></div>
   </div>
-  <div class="footer-bottom"><span class="footer-copy">&copy; 2024 A Responsible Citizen Foundation.</span><div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div></div>
+  <div class="footer-bottom">
+    <span class="footer-copy">&copy; 2024 A Responsible Citizen Foundation. All rights reserved.</span>
+    <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div>
+  </div>
 </footer>
 
 <div class="donate-overlay" id="donate-overlay">

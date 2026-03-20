@@ -12,18 +12,34 @@
   /* Hamburger */
   const ham   = document.getElementById('nav-hamburger');
   const links = document.getElementById('nav-links');
+
+  function closeMenu() {
+    if (!ham || !links) return;
+    ham.classList.remove('open');
+    links.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
   if (ham && links) {
     ham.addEventListener('click', () => {
-      ham.classList.toggle('open');
-      links.classList.toggle('open');
-      document.body.style.overflow = links.classList.contains('open') ? 'hidden' : '';
+      const isOpen = links.classList.toggle('open');
+      ham.classList.toggle('open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
+
+    /* Close on any link click inside menu */
     links.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        ham.classList.remove('open');
-        links.classList.remove('open');
-        document.body.style.overflow = '';
-      });
+      a.addEventListener('click', closeMenu);
+    });
+
+    /* Close on mobile donate button (modal opens after) */
+    links.querySelectorAll('button[data-donate]').forEach(btn => {
+      btn.addEventListener('click', closeMenu);
+    });
+
+    /* Close on Escape */
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && links.classList.contains('open')) closeMenu();
     });
   }
 
@@ -37,7 +53,9 @@
   const els = document.querySelectorAll('.reveal, .reveal-l, .reveal-r');
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
     }, { threshold: 0.08 });
     els.forEach(el => io.observe(el));
   } else {
@@ -47,21 +65,24 @@
   /* Donate modal */
   const overlay = document.getElementById('donate-overlay');
   if (overlay) {
-    /* Open triggers */
+    /* Open triggers — desktop nav + mobile menu buttons */
     document.querySelectorAll('[data-donate]').forEach(btn => {
       btn.addEventListener('click', () => {
         overlay.classList.add('open');
         document.body.style.overflow = 'hidden';
       });
     });
+
     /* Close */
-    document.getElementById('modal-close')?.addEventListener('click', closeModal);
-    overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
     function closeModal() {
       overlay.classList.remove('open');
       document.body.style.overflow = '';
     }
+    document.getElementById('modal-close')?.addEventListener('click', closeModal);
+    overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+    });
 
     /* Preset amounts */
     document.querySelectorAll('.donate-preset').forEach(btn => {

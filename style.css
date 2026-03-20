@@ -172,13 +172,8 @@ body::after {
   gap: 2rem;
 }
 .nav-logo { display: flex; align-items: center; flex-shrink: 0; }
-.nav-logo img { height: 40px; width: auto; display: block; }
-.nav-logo-placeholder {
-  height: 40px; min-width: 130px; background: var(--grey-100);
-  border-radius: var(--radius); display: flex; align-items: center;
-  justify-content: center; padding: 0 1rem;
-  font-size: 0.58rem; font-weight: 700; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--grey-400);
+.nav-logo-img {
+  height: 40px; width: auto; display: block; object-fit: contain;
 }
 .nav-links {
   display: flex; align-items: center; gap: 0.15rem;
@@ -191,6 +186,7 @@ body::after {
 }
 .nav-links a:hover, .nav-links a.active { color: var(--ink); background: var(--grey-100); }
 .nav-links a.active { font-weight: 600; }
+.nav-links .mobile-actions { display: none; }
 .nav-actions { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
 .nav-get-involved {
   font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em;
@@ -201,9 +197,11 @@ body::after {
 }
 .nav-get-involved:hover { border-color: var(--ink); background: var(--ink); color: var(--white); }
 
+/* Hamburger sits above the open menu overlay so it stays tappable */
 .nav-hamburger {
   display: none; flex-direction: column; gap: 5px;
   background: none; border: none; padding: 6px; flex-shrink: 0;
+  position: relative; z-index: 1000;
 }
 .nav-hamburger span { width: 22px; height: 1.5px; background: var(--ink); display: block; transition: all 0.3s; }
 .nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4px, 5px); }
@@ -211,13 +209,43 @@ body::after {
 .nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4px, -5px); }
 
 @media (max-width: 900px) {
-  .nav-links { display: none; }
+  .nav-logo-img { height: 32px; }
+  .nav-actions { display: none; }
   .nav-hamburger { display: flex; }
-  .nav-links.open {
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    position: fixed; inset: 0; background: var(--grey-50); z-index: 899; gap: 2rem;
+
+  /* Full-screen overlay — z-index above nav bar (900) but below hamburger (1000) */
+  .nav-links {
+    display: none;
+    flex-direction: column; align-items: center; justify-content: center;
+    position: fixed; inset: 0; z-index: 950;
+    background: var(--grey-50);
+    gap: 0.25rem; padding: 5rem 2rem 3rem;
+    overflow-y: auto;
   }
-  .nav-links.open a { font-size: 1.6rem; font-family: 'Cormorant Garamond', serif; font-weight: 500; background: none; padding: 0.3rem 1rem; }
+  .nav-links.open { display: flex; }
+
+  .nav-links.open > li > a {
+    font-size: 1.6rem; font-family: 'Cormorant Garamond', serif;
+    font-weight: 500; background: none !important;
+    padding: 0.6rem 1rem; width: 100%; text-align: center;
+    display: block; color: var(--ink);
+  }
+  .nav-links.open > li > a:hover { color: var(--red); }
+
+  /* Donate + Get Involved at bottom of menu */
+  .nav-links .mobile-actions {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 0.75rem; margin-top: 2rem; width: 100%;
+  }
+  .nav-links .mobile-actions .btn-donate {
+    font-size: 0.82rem; padding: 0.85rem 2rem;
+    width: 100%; max-width: 240px; justify-content: center;
+  }
+  .nav-links .mobile-actions .nav-get-involved {
+    font-size: 0.78rem; padding: 0.75rem 2rem;
+    width: 100%; max-width: 240px;
+    text-align: center; justify-content: center; display: flex;
+  }
 }
 
 /* =====================================================
@@ -281,14 +309,8 @@ body::after {
   gap: 3rem;
 }
 .footer-brand {}
-.footer-brand img { height: 38px; width: auto; margin-bottom: 1.2rem; }
-.footer-brand-placeholder {
-  height: 38px; width: 130px; background: var(--grey-200);
-  border-radius: var(--radius); margin-bottom: 1.2rem;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.55rem; font-weight: 700; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--grey-400);
-}
+.footer-brand img, .footer-logo { height: 38px; width: auto; margin-bottom: 1.2rem; display: block; }
+.footer-brand-placeholder { display: none; }
 .footer-tagline { font-size: 0.85rem; line-height: 1.8; color: var(--grey-600); max-width: 240px; margin-bottom: 1.8rem; font-weight: 300; }
 .footer-social { display: flex; gap: 0.5rem; }
 .footer-social a {
